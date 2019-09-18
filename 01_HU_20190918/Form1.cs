@@ -16,5 +16,10 @@ namespace _01_HU_20190918
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
