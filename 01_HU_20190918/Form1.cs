@@ -51,5 +51,15 @@ namespace _01_HU_20190918
         {
 
         }
+
+        private void numMonth_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
