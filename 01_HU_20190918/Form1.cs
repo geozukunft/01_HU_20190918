@@ -61,5 +61,15 @@ namespace _01_HU_20190918
         {
 
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gpoDepartment_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
