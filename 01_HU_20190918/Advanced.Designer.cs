@@ -31,21 +31,19 @@
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.lblFirstname = new System.Windows.Forms.Label();
             this.lblLastname = new System.Windows.Forms.Label();
-            this.numDay = new System.Windows.Forms.NumericUpDown();
             this.gpoDepartment = new System.Windows.Forms.GroupBox();
             this.rdoCS = new System.Windows.Forms.RadioButton();
             this.rdoMechanicalEng = new System.Windows.Forms.RadioButton();
             this.rdoElectricalEng = new System.Windows.Forms.RadioButton();
             this.rdoMechatronics = new System.Windows.Forms.RadioButton();
             this.lblBirthdate = new System.Windows.Forms.Label();
-            this.numMonth = new System.Windows.Forms.NumericUpDown();
-            this.numYear = new System.Windows.Forms.NumericUpDown();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numDay)).BeginInit();
+            this.dtpBirthdate = new System.Windows.Forms.DateTimePicker();
+            this.cmdAbort = new System.Windows.Forms.Button();
+            this.cmdSendData = new System.Windows.Forms.Button();
+            this.lblDataOut = new System.Windows.Forms.Label();
             this.gpoDepartment.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMonth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numYear)).BeginInit();
             this.SuspendLayout();
             // 
             // txtLastname
@@ -53,7 +51,7 @@
             this.txtLastname.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtLastname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastname.Location = new System.Drawing.Point(257, 193);
+            this.txtLastname.Location = new System.Drawing.Point(260, 184);
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(249, 40);
             this.txtLastname.TabIndex = 26;
@@ -81,30 +79,6 @@
             this.lblLastname.TabIndex = 24;
             this.lblLastname.Text = "Nachname:";
             // 
-            // numDay
-            // 
-            this.numDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
-            this.numDay.Location = new System.Drawing.Point(425, 314);
-            this.numDay.Margin = new System.Windows.Forms.Padding(2);
-            this.numDay.Maximum = new decimal(new int[] {
-            31,
-            0,
-            0,
-            0});
-            this.numDay.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numDay.Name = "numDay";
-            this.numDay.Size = new System.Drawing.Size(74, 40);
-            this.numDay.TabIndex = 23;
-            this.numDay.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // gpoDepartment
             // 
             this.gpoDepartment.Controls.Add(this.rdoCS);
@@ -113,7 +87,7 @@
             this.gpoDepartment.Controls.Add(this.rdoMechatronics);
             this.gpoDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
             this.gpoDepartment.ForeColor = System.Drawing.SystemColors.Window;
-            this.gpoDepartment.Location = new System.Drawing.Point(558, 193);
+            this.gpoDepartment.Location = new System.Drawing.Point(568, 193);
             this.gpoDepartment.Margin = new System.Windows.Forms.Padding(2);
             this.gpoDepartment.Name = "gpoDepartment";
             this.gpoDepartment.Padding = new System.Windows.Forms.Padding(2);
@@ -175,66 +149,18 @@
             this.lblBirthdate.AutoSize = true;
             this.lblBirthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBirthdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblBirthdate.Location = new System.Drawing.Point(47, 316);
+            this.lblBirthdate.Location = new System.Drawing.Point(43, 316);
             this.lblBirthdate.Name = "lblBirthdate";
             this.lblBirthdate.Size = new System.Drawing.Size(208, 33);
             this.lblBirthdate.TabIndex = 21;
             this.lblBirthdate.Text = "Geburtsdatum:";
-            // 
-            // numMonth
-            // 
-            this.numMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
-            this.numMonth.Location = new System.Drawing.Point(347, 313);
-            this.numMonth.Margin = new System.Windows.Forms.Padding(2);
-            this.numMonth.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.numMonth.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numMonth.Name = "numMonth";
-            this.numMonth.Size = new System.Drawing.Size(74, 40);
-            this.numMonth.TabIndex = 20;
-            this.numMonth.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numYear
-            // 
-            this.numYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
-            this.numYear.Location = new System.Drawing.Point(257, 313);
-            this.numYear.Margin = new System.Windows.Forms.Padding(2);
-            this.numYear.Maximum = new decimal(new int[] {
-            2019,
-            0,
-            0,
-            0});
-            this.numYear.Minimum = new decimal(new int[] {
-            1900,
-            0,
-            0,
-            0});
-            this.numYear.Name = "numYear";
-            this.numYear.Size = new System.Drawing.Size(87, 40);
-            this.numYear.TabIndex = 19;
-            this.numYear.Value = new decimal(new int[] {
-            1900,
-            0,
-            0,
-            0});
             // 
             // txtFirstName
             // 
             this.txtFirstName.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(257, 247);
+            this.txtFirstName.Location = new System.Drawing.Point(260, 242);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(249, 40);
             this.txtFirstName.TabIndex = 18;
@@ -250,29 +176,81 @@
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "Anmelde Formular Litec";
             // 
+            // dtpBirthdate
+            // 
+            this.dtpBirthdate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBirthdate.CalendarForeColor = System.Drawing.SystemColors.WindowText;
+            this.dtpBirthdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirthdate.Location = new System.Drawing.Point(260, 299);
+            this.dtpBirthdate.Name = "dtpBirthdate";
+            this.dtpBirthdate.Size = new System.Drawing.Size(203, 44);
+            this.dtpBirthdate.TabIndex = 27;
+            this.dtpBirthdate.ValueChanged += new System.EventHandler(this.dtpBirthdate_ValueChanged);
+            // 
+            // cmdAbort
+            // 
+            this.cmdAbort.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.cmdAbort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cmdAbort.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.cmdAbort.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdAbort.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmdAbort.Location = new System.Drawing.Point(398, 464);
+            this.cmdAbort.Name = "cmdAbort";
+            this.cmdAbort.Size = new System.Drawing.Size(204, 48);
+            this.cmdAbort.TabIndex = 29;
+            this.cmdAbort.Text = "Abbrechen";
+            this.cmdAbort.UseVisualStyleBackColor = false;
+            this.cmdAbort.Click += new System.EventHandler(this.cmdAbort_Click);
+            // 
+            // cmdSendData
+            // 
+            this.cmdSendData.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.cmdSendData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cmdSendData.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.cmdSendData.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdSendData.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmdSendData.Location = new System.Drawing.Point(609, 464);
+            this.cmdSendData.Name = "cmdSendData";
+            this.cmdSendData.Size = new System.Drawing.Size(169, 48);
+            this.cmdSendData.TabIndex = 28;
+            this.cmdSendData.Text = "Senden";
+            this.cmdSendData.UseVisualStyleBackColor = false;
+            this.cmdSendData.Click += new System.EventHandler(this.cmdSendData_Click);
+            // 
+            // lblDataOut
+            // 
+            this.lblDataOut.AutoSize = true;
+            this.lblDataOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataOut.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblDataOut.Location = new System.Drawing.Point(42, 398);
+            this.lblDataOut.Name = "lblDataOut";
+            this.lblDataOut.Size = new System.Drawing.Size(0, 37);
+            this.lblDataOut.TabIndex = 30;
+            this.lblDataOut.Click += new System.EventHandler(this.lblDataOut_Click);
+            // 
             // Advanced
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(848, 560);
+            this.Controls.Add(this.lblDataOut);
+            this.Controls.Add(this.cmdAbort);
+            this.Controls.Add(this.cmdSendData);
+            this.Controls.Add(this.dtpBirthdate);
             this.Controls.Add(this.txtLastname);
             this.Controls.Add(this.lblFirstname);
             this.Controls.Add(this.lblLastname);
-            this.Controls.Add(this.numDay);
             this.Controls.Add(this.gpoDepartment);
             this.Controls.Add(this.lblBirthdate);
-            this.Controls.Add(this.numMonth);
-            this.Controls.Add(this.numYear);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.lblTitle);
             this.Name = "Advanced";
             this.Text = "Advanced";
-            ((System.ComponentModel.ISupportInitialize)(this.numDay)).EndInit();
+            this.Load += new System.EventHandler(this.Advanced_Load);
             this.gpoDepartment.ResumeLayout(false);
             this.gpoDepartment.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMonth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numYear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,16 +261,17 @@
         private System.Windows.Forms.TextBox txtLastname;
         private System.Windows.Forms.Label lblFirstname;
         private System.Windows.Forms.Label lblLastname;
-        private System.Windows.Forms.NumericUpDown numDay;
         private System.Windows.Forms.GroupBox gpoDepartment;
         private System.Windows.Forms.RadioButton rdoCS;
         private System.Windows.Forms.RadioButton rdoMechanicalEng;
         private System.Windows.Forms.RadioButton rdoElectricalEng;
         private System.Windows.Forms.RadioButton rdoMechatronics;
         private System.Windows.Forms.Label lblBirthdate;
-        private System.Windows.Forms.NumericUpDown numMonth;
-        private System.Windows.Forms.NumericUpDown numYear;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.DateTimePicker dtpBirthdate;
+        private System.Windows.Forms.Button cmdAbort;
+        private System.Windows.Forms.Button cmdSendData;
+        private System.Windows.Forms.Label lblDataOut;
     }
 }

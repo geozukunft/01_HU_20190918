@@ -25,7 +25,9 @@ namespace _01_HU_20190918
 
         private void cmdAdvanced_Click(object sender, EventArgs e)
         {
-
+            Form advanced = new Advanced();
+            advanced.Show();
+            Hide();
         }
 
         private void cmdBasic_Click(object sender, EventArgs e)
@@ -42,14 +44,5 @@ namespace _01_HU_20190918
             Application.Exit();
         }
 
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
     }
 }
