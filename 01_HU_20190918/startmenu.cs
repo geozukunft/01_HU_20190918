@@ -33,8 +33,8 @@ namespace _01_HU_20190918
             Form basic = new basic();
             basic.Show();
             Hide();
-            Thread.Sleep(10000);
-            Visible = true;
+            //Thread.Sleep(1000);
+            //Visible = true;
         }
 
         private void cmdClose_Click(object sender, EventArgs e)
