@@ -1,6 +1,6 @@
 ﻿namespace _01_HU_20190918
 {
-    partial class Form1
+    partial class basic
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(basic));
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
@@ -262,7 +262,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(1675, 1152);
+            this.ClientSize = new System.Drawing.Size(1675, 1220);
             this.Controls.Add(this.gpoDepartment);
             this.Controls.Add(this.lblBirthdate);
             this.Controls.Add(this.numericUpDown1);
