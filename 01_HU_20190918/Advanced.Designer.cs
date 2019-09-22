@@ -42,7 +42,7 @@
             this.dtpBirthdate = new System.Windows.Forms.DateTimePicker();
             this.cmdAbort = new System.Windows.Forms.Button();
             this.cmdSendData = new System.Windows.Forms.Button();
-            this.lblDataOut = new System.Windows.Forms.Label();
+            this.pgbSenden = new System.Windows.Forms.ProgressBar();
             this.gpoDepartment.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,16 +218,14 @@
             this.cmdSendData.UseVisualStyleBackColor = false;
             this.cmdSendData.Click += new System.EventHandler(this.cmdSendData_Click);
             // 
-            // lblDataOut
+            // pgbSenden
             // 
-            this.lblDataOut.AutoSize = true;
-            this.lblDataOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataOut.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblDataOut.Location = new System.Drawing.Point(42, 398);
-            this.lblDataOut.Name = "lblDataOut";
-            this.lblDataOut.Size = new System.Drawing.Size(0, 37);
-            this.lblDataOut.TabIndex = 30;
-            this.lblDataOut.Click += new System.EventHandler(this.lblDataOut_Click);
+            this.pgbSenden.Location = new System.Drawing.Point(145, 401);
+            this.pgbSenden.Name = "pgbSenden";
+            this.pgbSenden.Size = new System.Drawing.Size(406, 23);
+            this.pgbSenden.Step = 5;
+            this.pgbSenden.TabIndex = 30;
+            this.pgbSenden.Click += new System.EventHandler(this.pgbSenden_Click);
             // 
             // Advanced
             // 
@@ -235,7 +233,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(848, 560);
-            this.Controls.Add(this.lblDataOut);
+            this.Controls.Add(this.pgbSenden);
             this.Controls.Add(this.cmdAbort);
             this.Controls.Add(this.cmdSendData);
             this.Controls.Add(this.dtpBirthdate);
@@ -272,6 +270,6 @@
         private System.Windows.Forms.DateTimePicker dtpBirthdate;
         private System.Windows.Forms.Button cmdAbort;
         private System.Windows.Forms.Button cmdSendData;
-        private System.Windows.Forms.Label lblDataOut;
+        private System.Windows.Forms.ProgressBar pgbSenden;
     }
 }
