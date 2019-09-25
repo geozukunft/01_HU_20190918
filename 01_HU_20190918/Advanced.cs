@@ -17,6 +17,7 @@ namespace _01_HU_20190918
         {
             InitializeComponent();
             dtpBirthdate.MaxDate = DateTime.Today;
+            int percent = (int)(((double)pgbSenden.Value / (double)pgbSenden.Maximum) * 100);
         }
 
         private void txtLastname_TextChanged(object sender, EventArgs e)
@@ -41,17 +42,22 @@ namespace _01_HU_20190918
         private void cmdSendData_Click(object sender, EventArgs e)
         {
             string selectedDate = dtpBirthdate.Value.ToShortDateString();
-            do
+            double counterTimer = 0;
+            
+            
+            while (pgbSenden.Value < 100)
             {
-                pgbSenden.Value += 10;
-                Thread.Sleep(1000);
+                pgbSenden.Value = Convert.ToInt32(100*(1-Math.Exp(-counterTimer/5)));
+                counterTimer += 0.1;
+                Thread.Sleep(100);
+                int percent = (int)(((double)pgbSenden.Value / (double)pgbSenden.Maximum) * 100);
+                pgbSenden.Refresh();
+                pgbSenden.CreateGraphics().DrawString(percent.ToString() + "%",
+                    new Font("Arial", (float)8.25, FontStyle.Regular),
+                    Brushes.Black,
+                    new PointF(pgbSenden.Width / 2 - 10, pgbSenden.Height / 2 - 7));
 
-            } while (pgbSenden.Value < 90);
-            do
-            {
-                pgbSenden.Value += 1;
-                Thread.Sleep(1000);
-            } while (pgbSenden.Value < 100);
+            }
         }
 
         private void cmdAbort_Click(object sender, EventArgs e)
