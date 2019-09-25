@@ -19,9 +19,9 @@ namespace _01_HU_20190918
         public Advanced()
         {
             InitializeComponent();
-            dtpBirthdate.MaxDate = DateTime.Today;
+            dtpBirthdate.MaxDate = DateTime.Today; //You can't be born in the future
             int percent = (int)(((double)pgbSenden.Value / (double)pgbSenden.Maximum) * 100);
-            pgbSenden.Visible = false;
+            pgbSenden.Visible = false; //Make progressbar invisible at startup
         }
 
         private void txtLastname_TextChanged(object sender, EventArgs e)
@@ -45,17 +45,18 @@ namespace _01_HU_20190918
 
         private void cmdSendData_Click(object sender, EventArgs e)
         {
-            writeToCSV();
+            writeToCSV(); //Write data to csv
 
             pgbSenden.Visible = true;
-            pgbSenden_Load();
+            pgbSenden_Load(); //Start the "sending" data progress bar 
             pgbSenden.Visible = false;
 
-            txtFirstName.ResetText();
+            txtFirstName.ResetText(); //Reset all values to allow for the next data set to be entered
             txtLastname.ResetText();
             dtpBirthdate.Value = DateTime.Today;
             resetRDO();
             pgbSenden.Value = 0;
+
         }
 
         private void cmdAbort_Click(object sender, EventArgs e)
@@ -75,12 +76,12 @@ namespace _01_HU_20190918
             double counterTimer = 0;
             while (pgbSenden.Value < 100)
             {
-                pgbSenden.Value = Convert.ToInt32(100 * (1 - Math.Exp(-counterTimer / 5)));
+                pgbSenden.Value = Convert.ToInt32(100 * (1 - Math.Exp(-counterTimer / 5))); //Mathematic expression to go slower every time the loop repeats
                 counterTimer += 0.1;
                 Thread.Sleep(100);
                 int percent = (int)(((double)pgbSenden.Value / (double)pgbSenden.Maximum) * 100);
                 pgbSenden.Refresh();
-                pgbSenden.CreateGraphics().DrawString(percent.ToString() + "%",
+                pgbSenden.CreateGraphics().DrawString(percent.ToString() + "%", //Print the current percentage
                     new Font("Arial", (float)8.25, FontStyle.Regular),
                     Brushes.Black,
                     new PointF(pgbSenden.Width / 2 - 10, pgbSenden.Height / 2 - 7));
@@ -88,7 +89,7 @@ namespace _01_HU_20190918
             }
         }
 
-        private void writeToCSV()
+        private void writeToCSV() //Write data to csv
         {
             var csv = new StringBuilder();
 
@@ -121,7 +122,7 @@ namespace _01_HU_20190918
             File.AppendAllText(filepath, csv.ToString());
         }
 
-        private void resetRDO()
+        private void resetRDO() //Reset RDO buttons
         {
             rdoCS.Checked = false;
             rdoElectricalEng.Checked = false;
