@@ -45,10 +45,52 @@ namespace _01_HU_20190918
 
         private void cmdSendData_Click(object sender, EventArgs e)
         {
-            string selectedDate = dtpBirthdate.Value.ToShortDateString();
-            double counterTimer = 0;
-            var csv = new StringBuilder();
+            writeToCSV();
+
+            pgbSenden.Visible = true;
+            pgbSenden_Load();
+            pgbSenden.Visible = false;
+
+            txtFirstName.ResetText();
+            txtLastname.ResetText();
+            dtpBirthdate.Value = DateTime.Today;
+            resetRDO();
+        }
+
+        private void cmdAbort_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form sm = new startmenu();
+            sm.Show();
+        }
+
+        private void pgbSenden_Click(object sender, EventArgs e)
+        {
             
+        }
+
+        private void pgbSenden_Load()
+        {
+            double counterTimer = 0;
+            while (pgbSenden.Value < 100)
+            {
+                pgbSenden.Value = Convert.ToInt32(100 * (1 - Math.Exp(-counterTimer / 5)));
+                counterTimer += 0.1;
+                Thread.Sleep(100);
+                int percent = (int)(((double)pgbSenden.Value / (double)pgbSenden.Maximum) * 100);
+                pgbSenden.Refresh();
+                pgbSenden.CreateGraphics().DrawString(percent.ToString() + "%",
+                    new Font("Arial", (float)8.25, FontStyle.Regular),
+                    Brushes.Black,
+                    new PointF(pgbSenden.Width / 2 - 10, pgbSenden.Height / 2 - 7));
+
+            }
+        }
+
+        private void writeToCSV()
+        {
+            var csv = new StringBuilder();
+
             if (rdoCS.Checked == true)
             {
                 department = "Informatik";
@@ -76,34 +118,14 @@ namespace _01_HU_20190918
             var newLineCSV = string.Format("{0},{1},{2},{3}", firstCSV, secondCSV, thirdCSV, fourthCSV);
             csv.AppendLine(newLineCSV);
             File.AppendAllText(filepath, csv.ToString());
-
-            pgbSenden.Visible = true;
-
-                while (pgbSenden.Value < 100)
-            {
-                pgbSenden.Value = Convert.ToInt32(100*(1-Math.Exp(-counterTimer/5)));
-                counterTimer += 0.1;
-                Thread.Sleep(100);
-                int percent = (int)(((double)pgbSenden.Value / (double)pgbSenden.Maximum) * 100);
-                pgbSenden.Refresh();
-                pgbSenden.CreateGraphics().DrawString(percent.ToString() + "%",
-                    new Font("Arial", (float)8.25, FontStyle.Regular),
-                    Brushes.Black,
-                    new PointF(pgbSenden.Width / 2 - 10, pgbSenden.Height / 2 - 7));
-
-            }
         }
 
-        private void cmdAbort_Click(object sender, EventArgs e)
+        private void resetRDO()
         {
-            Hide();
-            Form sm = new startmenu();
-            sm.Show();
-        }
-
-        private void pgbSenden_Click(object sender, EventArgs e)
-        {
-            
+            rdoCS.Checked = false;
+            rdoElectricalEng.Checked = false;
+            rdoMechanicalEng.Checked = false;
+            rdoMechatronics.Checked = false;
         }
     }
 }

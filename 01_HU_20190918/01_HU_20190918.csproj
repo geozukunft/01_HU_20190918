@@ -83,7 +83,6 @@
     <EmbeddedResource Include="startmenu.resx">
       <DependentUpon>startmenu.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include=".gitignore" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

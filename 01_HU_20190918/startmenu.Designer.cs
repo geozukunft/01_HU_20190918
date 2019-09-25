@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(startmenu));
             this.cmdBasic = new System.Windows.Forms.Button();
             this.cmdAdvanced = new System.Windows.Forms.Button();
             this.cmdClose = new System.Windows.Forms.Button();
@@ -39,7 +40,7 @@
             // 
             this.cmdBasic.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdBasic.Location = new System.Drawing.Point(11, 44);
-            this.cmdBasic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdBasic.Margin = new System.Windows.Forms.Padding(2);
             this.cmdBasic.Name = "cmdBasic";
             this.cmdBasic.Size = new System.Drawing.Size(168, 44);
             this.cmdBasic.TabIndex = 1;
@@ -51,7 +52,7 @@
             // 
             this.cmdAdvanced.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAdvanced.Location = new System.Drawing.Point(221, 44);
-            this.cmdAdvanced.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdAdvanced.Margin = new System.Windows.Forms.Padding(2);
             this.cmdAdvanced.Name = "cmdAdvanced";
             this.cmdAdvanced.Size = new System.Drawing.Size(168, 44);
             this.cmdAdvanced.TabIndex = 2;
@@ -63,13 +64,18 @@
             // 
             this.cmdClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdClose.Location = new System.Drawing.Point(140, 172);
-            this.cmdClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdClose.Margin = new System.Windows.Forms.Padding(2);
             this.cmdClose.Name = "cmdClose";
             this.cmdClose.Size = new System.Drawing.Size(124, 51);
             this.cmdClose.TabIndex = 3;
             this.cmdClose.Text = "Close";
             this.cmdClose.UseVisualStyleBackColor = true;
             this.cmdClose.Click += new System.EventHandler(this.cmdClose_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // startmenu
             // 
@@ -79,7 +85,8 @@
             this.Controls.Add(this.cmdClose);
             this.Controls.Add(this.cmdBasic);
             this.Controls.Add(this.cmdAdvanced);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "startmenu";
             this.Text = "startmenu";
             this.Load += new System.EventHandler(this.startmenu_Load);
