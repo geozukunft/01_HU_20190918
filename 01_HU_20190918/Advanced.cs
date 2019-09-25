@@ -8,16 +8,20 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace _01_HU_20190918
 {
     public partial class Advanced : Form
     {
+        string department;
+        string filepath = Directory.GetCurrentDirectory() + "\\data.csv";
         public Advanced()
         {
             InitializeComponent();
             dtpBirthdate.MaxDate = DateTime.Today;
             int percent = (int)(((double)pgbSenden.Value / (double)pgbSenden.Maximum) * 100);
+            pgbSenden.Visible = false;
         }
 
         private void txtLastname_TextChanged(object sender, EventArgs e)
@@ -43,9 +47,39 @@ namespace _01_HU_20190918
         {
             string selectedDate = dtpBirthdate.Value.ToShortDateString();
             double counterTimer = 0;
+            var csv = new StringBuilder();
             
-            
-            while (pgbSenden.Value < 100)
+            if (rdoCS.Checked == true)
+            {
+                department = "Informatik";
+            }
+            else if (rdoMechanicalEng.Checked == true)
+            {
+                department = "Maschinenbau";
+            }
+            else if (rdoMechatronics.Checked == true)
+            {
+                department = "Mechatronik";
+            }
+            else if (rdoElectricalEng.Checked == true)
+            {
+                department = "Elektrotechnik";
+            }
+            else
+            {
+                department = "Error Code: 0x001";
+            }
+            var firstCSV = txtFirstName.Text;
+            var secondCSV = txtLastname.Text;
+            var thirdCSV = dtpBirthdate.Value.ToShortDateString();
+            var fourthCSV = department;
+            var newLineCSV = string.Format("{0},{1},{2},{3}", firstCSV, secondCSV, thirdCSV, fourthCSV);
+            csv.AppendLine(newLineCSV);
+            File.AppendAllText(filepath, csv.ToString());
+
+            pgbSenden.Visible = true;
+
+                while (pgbSenden.Value < 100)
             {
                 pgbSenden.Value = Convert.ToInt32(100*(1-Math.Exp(-counterTimer/5)));
                 counterTimer += 0.1;
