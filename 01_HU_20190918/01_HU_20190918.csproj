@@ -25,7 +25,7 @@
     <InstallUrl>http://share.geozukunft.at/software/</InstallUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -71,16 +71,22 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>AE5F6A7A484FA51CFCD4190FE6E65ADFB17522D1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>896F1EC679B564630B049A3161DB2F5023FA3A81</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>01_HU_20190918_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>01_HU_20190918_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>01_HU_20190918_1_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -134,6 +140,7 @@
     <EmbeddedResource Include="startmenu.resx">
       <DependentUpon>startmenu.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="01_HU_20190918_1_TemporaryKey.pfx" />
     <None Include="01_HU_20190918_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
