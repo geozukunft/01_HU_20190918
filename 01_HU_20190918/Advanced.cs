@@ -55,6 +55,7 @@ namespace _01_HU_20190918
             txtLastname.ResetText();
             dtpBirthdate.Value = DateTime.Today;
             resetRDO();
+            pgbSenden.Value = 0;
         }
 
         private void cmdAbort_Click(object sender, EventArgs e)
