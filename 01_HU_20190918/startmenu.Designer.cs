@@ -88,7 +88,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "startmenu";
-            this.Text = "startmenu";
+            this.Text = "Litec Anmeldung Home";
             this.Load += new System.EventHandler(this.startmenu_Load);
             this.ResumeLayout(false);
 

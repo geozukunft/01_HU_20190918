@@ -35,6 +35,7 @@
             this.numMonth = new System.Windows.Forms.NumericUpDown();
             this.lblBirthdate = new System.Windows.Forms.Label();
             this.gpoDepartment = new System.Windows.Forms.GroupBox();
+            this.rdoCS = new System.Windows.Forms.RadioButton();
             this.rdoMechanicalEng = new System.Windows.Forms.RadioButton();
             this.rdoElectricalEng = new System.Windows.Forms.RadioButton();
             this.rdoMechatronics = new System.Windows.Forms.RadioButton();
@@ -42,7 +43,6 @@
             this.cmdSendData = new System.Windows.Forms.Button();
             this.cmdAbort = new System.Windows.Forms.Button();
             this.numDay = new System.Windows.Forms.NumericUpDown();
-            this.rdoCS = new System.Windows.Forms.RadioButton();
             this.lblLastname = new System.Windows.Forms.Label();
             this.lblFirstname = new System.Windows.Forms.Label();
             this.txtLastname = new System.Windows.Forms.TextBox();
@@ -155,6 +155,18 @@
             this.gpoDepartment.Text = "Abteilung:";
             this.gpoDepartment.Enter += new System.EventHandler(this.gpoDepartment_Enter);
             // 
+            // rdoCS
+            // 
+            this.rdoCS.AutoSize = true;
+            this.rdoCS.Location = new System.Drawing.Point(18, 101);
+            this.rdoCS.Margin = new System.Windows.Forms.Padding(2);
+            this.rdoCS.Name = "rdoCS";
+            this.rdoCS.Size = new System.Drawing.Size(162, 37);
+            this.rdoCS.TabIndex = 4;
+            this.rdoCS.TabStop = true;
+            this.rdoCS.Text = "Informatik";
+            this.rdoCS.UseVisualStyleBackColor = true;
+            // 
             // rdoMechanicalEng
             // 
             this.rdoMechanicalEng.AutoSize = true;
@@ -259,18 +271,6 @@
             0});
             this.numDay.ValueChanged += new System.EventHandler(this.numDay_ValueChanged);
             // 
-            // rdoCS
-            // 
-            this.rdoCS.AutoSize = true;
-            this.rdoCS.Location = new System.Drawing.Point(18, 101);
-            this.rdoCS.Margin = new System.Windows.Forms.Padding(2);
-            this.rdoCS.Name = "rdoCS";
-            this.rdoCS.Size = new System.Drawing.Size(162, 37);
-            this.rdoCS.TabIndex = 4;
-            this.rdoCS.TabStop = true;
-            this.rdoCS.Text = "Informatik";
-            this.rdoCS.UseVisualStyleBackColor = true;
-            // 
             // lblLastname
             // 
             this.lblLastname.AutoSize = true;
@@ -325,7 +325,7 @@
             this.Controls.Add(this.lblTitle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "basic";
-            this.Text = "Schulanmeldung LITEC";
+            this.Text = "Schulanmeldung LITEC Basic";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numYear)).EndInit();

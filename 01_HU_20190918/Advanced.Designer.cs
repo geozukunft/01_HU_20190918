@@ -250,7 +250,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Advanced";
-            this.Text = "Advanced";
+            this.Text = "Schulanmeldung LITEC Advanced";
             this.Load += new System.EventHandler(this.Advanced_Load);
             this.gpoDepartment.ResumeLayout(false);
             this.gpoDepartment.PerformLayout();
